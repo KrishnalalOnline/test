@@ -66,6 +66,8 @@ body {
   font-family: var(--default-font);
 }
 
+
+
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -867,6 +869,48 @@ section,
   background-color: #4a2c1f; /* Same background color for active state */
   color: orange; /* Changes the active button text color */
 }
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.magnify-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    font-size: 30px;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0); /* Transparent background initially */
+    padding: 10px 20px; /* Padding for the rectangle */
+    border-radius: 15px; /* Rounded rectangle */
+}
+
+.image-container:hover .magnify-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+    background-color: rgba(255, 255, 255, 0.7); /* White background on hover */
+}
+
+.magnify-icon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Ensure no underline */
+    color: inherit; /* Keep the color of the icon */
+}
+
+.image-container img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
 
 
 
